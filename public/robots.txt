@@ -1,0 +1,15 @@
+
+User-agent: *
+
+Disallow: /_next/
+Disallow: /api/
+
+Disallow: /login
+Disallow: /register
+
+
+Allow: /
+
+
+Sitemap: https://www.bettson.gr/sitemap.xml
+Host: https://www.bettson.gr

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Главная страница -->
+  <url>
+    <loc>https://www.bettson.gr/</loc>
+    <priority>1.00</priority>
+  </url>
+  <!-- Маршруты из app/ -->
+  <url><loc>https://www.bettson.gr/bonuses-promotions</loc></url>
+  <url><loc>https://www.bettson.gr/mobile-app</loc></url>
+  <url><loc>https://www.bettson.gr/customer-support</loc></url>
+  <url><loc>https://www.bettson.gr/payment-methods</loc></url>
+  <url><loc>https://www.bettson.gr/faq</loc></url>
+</urlset>
