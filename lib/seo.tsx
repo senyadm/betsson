@@ -12,7 +12,7 @@ type BasePageProps = {
   /** Сам контент страницы */
   children: React.ReactNode;
   /** Объект JSON-LD (Schema.org). Необязателен. */
-  jsonLd?: Record<string, any>;
+  jsonLd?: Record<string, unknown>;
 };
 
 /**
