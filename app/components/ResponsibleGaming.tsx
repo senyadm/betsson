@@ -1,6 +1,8 @@
 // app/components/ResponsibleGaming.tsx
+"use client";
+
 import React from "react";
-import { FaCheckCircle } from "react-icons/fa";
+import { CheckCircle } from "lucide-react";
 
 export default function ResponsibleGaming() {
   const points = [
@@ -35,7 +37,7 @@ export default function ResponsibleGaming() {
         <ul className="max-w-2xl mx-auto space-y-6">
           {points.map((text, idx) => (
             <li key={idx} className="flex items-start gap-4">
-              <FaCheckCircle className="mt-1 text-primary flex-shrink-0" size={24} />
+              <CheckCircle className="mt-1 flex-shrink-0 w-6 h-6 text-primary" />
               <span className="text-gray-700">{text}</span>
             </li>
           ))}

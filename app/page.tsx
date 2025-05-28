@@ -2,11 +2,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-// import CasinoGames from "./components/CasinoGames";
-// import LiveCasino from "./components/LiveCasino";
-// import SportsBetting from "./components/SportsBetting";
-// import LiveBetting from "./components/LiveBetting";
-// import ResponsibleGaming from "./components/ResponsibleGaming";
 import SafetyLicense from "./components/SafetyLicense";
 import CasinoGames from "./components/CasinoGames";
 import LiveCasino from "./components/LiveCasino";

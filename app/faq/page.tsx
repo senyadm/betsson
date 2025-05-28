@@ -1,7 +1,8 @@
 // app/why-betsson/page.tsx
 import React from "react";
 import Link from "next/link";
-import { FaCheckCircle } from "react-icons/fa";
+import { CheckCircle } from "lucide-react";
+import { BasePage, baseMetadata } from "@/lib/seo";
 
 const EXTERNAL_CASINO = "https://www.betsson.gr/el/casino";
 
@@ -52,16 +53,28 @@ const faqs = [
   },
 ];
 
-export const metadata = {
-  title: "Γιατί να Επιλέξεις τη Betsson – Betsson GR",
-  description:
-    "Μάθετε γιατί η Betsson είναι η κορυφαία επιλογή για νόμιμο, ασφαλές και συναρπαστικό online καζίνο και στοίχημα στην Ελλάδα.",
+// SEO metadata + canonical
+export const metadata = baseMetadata(
+  "Γιατί να Επιλέξεις τη Betsson – Betsson GR",
+  "Μάθετε γιατί η Betsson είναι η κορυφαία επιλογή για νόμιμο, ασφαλές και συναρπαστικό online καζίνο και στοίχημα στην Ελλάδα.",
+  "/why-betsson"
+);
+
+// JSON-LD Schema for FAQPage
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
 };
 
 export default function WhyBetssonPage() {
   return (
-    <main className="bg-white py-16">
-      <div className="container mx-auto px-4 space-y-12">
+    <BasePage jsonLd={jsonLd}>
+      <div className="container mx-auto px-4 space-y-12 py-16 bg-white">
         {/* Reasons */}
         <section className="text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-secondary mb-6">
@@ -73,9 +86,8 @@ export default function WhyBetssonPage() {
                 key={idx}
                 className="flex items-start p-6 bg-green-50 rounded-xl shadow hover:shadow-lg transition"
               >
-                <FaCheckCircle
-                  className="text-primary mt-1 mr-4 flex-shrink-0"
-                  size={24}
+                <CheckCircle
+                  className="text-primary mt-1 mr-4 w-6 h-6"
                 />
                 <p className="text-gray-700 leading-relaxed">{reason}</p>
               </div>
@@ -114,7 +126,7 @@ export default function WhyBetssonPage() {
           </Link>
         </section>
 
-        {/* FAQ */}
+        {/* FAQ Section */}
         <section>
           <h2 className="text-3xl md:text-4xl font-semibold text-center text-secondary mb-6">
             Συχνές Ερωτήσεις (FAQ)
@@ -134,6 +146,6 @@ export default function WhyBetssonPage() {
           </ol>
         </section>
       </div>
-    </main>
+    </BasePage>
   );
 }

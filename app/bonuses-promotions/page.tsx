@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { BasePage, baseMetadata } from "@/lib/seo";
 
 const EXTERNAL_PROMOS = "https://www.betsson.gr/el/prosfores";
 
@@ -32,15 +33,30 @@ const bonuses = [
   },
 ];
 
-export const metadata = {
-  title: "Μπόνους Καλωσορίσματος και Προσφορές – Betsson GR",
-  description:
-    "Δείτε όλα τα μπόνους καλωσορίσματος και τις τρέχουσες προσφορές που προσφέρει η Betsson GR.",
+export const metadata = baseMetadata(
+  "Μπόνους Καλωσορίσματος και Προσφορές – Betsson GR",
+  "Δείτε όλα τα μπόνους καλωσορίσματος και τις τρέχουσες προσφορές που προσφέρει η Betsson GR.",
+  "/bonuses-promotions"
+);
+
+// JSON-LD схема для PromotionEvent + Offer
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "PromotionEvent",
+  name: metadata.title,
+  url: "https://www.bettson.gr/bonuses-promotions",
+  offers: bonuses.map(({ title, description, imageSrc }) => ({
+    "@type": "Offer",
+    name: title,
+    description,
+    url: EXTERNAL_PROMOS,
+    image: `https://www.bettson.gr${imageSrc}`,
+  })),
 };
 
 export default function BonusesPromotionsPage() {
   return (
-    <main className="bg-white py-16">
+    <BasePage jsonLd={jsonLd}>
       <div className="container mx-auto px-4 text-center">
         <h1 className="text-4xl font-bold text-secondary mb-6">
           Μπόνους Καλωσορίσματος και Προσφορές
@@ -79,9 +95,9 @@ export default function BonusesPromotionsPage() {
         </div>
 
         <p className="max-w-2xl mx-auto mt-12 text-lg text-gray-700 leading-relaxed">
-          Οι χρήστες μπορούν να έχουν πρόσβαση σε όλα τα διαθέσιμα υπηρεσίες, είτε  
-          πρόκειται για ζωντανό στοίχημα, παιχνίδια καζίνο ή εφαρμογές για κινητά.  
-          Η πλατφόρμα κάνει την εμπειρία στοιχηματισμού πιο ελκυστική με τις  
+          Οι χρήστες μπορούν να έχουν πρόσβαση σε όλες τις διαθέσιμες υπηρεσίες,
+          είτε πρόκειται για ζωντανό στοίχημα, παιχνίδια καζίνο ή εφαρμογές για
+          κινητά. Η πλατφόρμα κάνει την εμπειρία στοιχηματισμού πιο ελκυστική με τις
           δυναμικές της δυνατότητες και τις πελατοκεντρικές υπηρεσίες.
         </p>
 
@@ -96,6 +112,6 @@ export default function BonusesPromotionsPage() {
           </Link>
         </div>
       </div>
-    </main>
+    </BasePage>
   );
 }

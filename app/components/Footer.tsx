@@ -4,7 +4,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FaArrowUp } from "react-icons/fa";
+import { ArrowUp } from "lucide-react";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -38,7 +38,7 @@ export default function Footer() {
           aria-label="Επάνω"
           className="p-2 rounded-full bg-green-500 hover:bg-green-600 transition"
         >
-          <FaArrowUp className="text-white" />
+          <ArrowUp className="w-5 h-5 text-white" />
         </button>
       </div>
     </footer>

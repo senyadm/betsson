@@ -3,12 +3,40 @@
   <!-- Главная страница -->
   <url>
     <loc>https://www.bettson.gr/</loc>
+    <lastmod>2025-05-28</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.00</priority>
   </url>
-  <!-- Маршруты из app/ -->
-  <url><loc>https://www.bettson.gr/bonuses-promotions</loc></url>
-  <url><loc>https://www.bettson.gr/mobile-app</loc></url>
-  <url><loc>https://www.bettson.gr/customer-support</loc></url>
-  <url><loc>https://www.bettson.gr/payment-methods</loc></url>
-  <url><loc>https://www.bettson.gr/faq</loc></url>
+
+  <!-- Служебные страницы -->
+  <url>
+    <loc>https://www.bettson.gr/bonuses-promotions</loc>
+    <lastmod>2025-05-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.bettson.gr/mobile-app</loc>
+    <lastmod>2025-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.bettson.gr/customer-support</loc>
+    <lastmod>2025-05-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.bettson.gr/payment-methods</loc>
+    <lastmod>2025-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.bettson.gr/faq</loc>
+    <lastmod>2025-05-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
 </urlset>
